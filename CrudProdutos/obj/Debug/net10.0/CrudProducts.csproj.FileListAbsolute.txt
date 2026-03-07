@@ -1,5 +1,0 @@
-C:\Users\Gabriel\source\repos\CrudProdutos\CrudProdutos\obj\Debug\net10.0\CrudProducts.csproj.AssemblyReference.cache
-C:\Users\Gabriel\source\repos\CrudProdutos\CrudProdutos\obj\Debug\net10.0\CrudProducts.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Gabriel\source\repos\CrudProdutos\CrudProdutos\obj\Debug\net10.0\CrudProducts.AssemblyInfoInputs.cache
-C:\Users\Gabriel\source\repos\CrudProdutos\CrudProdutos\obj\Debug\net10.0\CrudProducts.AssemblyInfo.cs
-C:\Users\Gabriel\source\repos\CrudProdutos\CrudProdutos\obj\Debug\net10.0\CrudProducts.csproj.CoreCompileInputs.cache
