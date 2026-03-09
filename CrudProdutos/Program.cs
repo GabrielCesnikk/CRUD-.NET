@@ -91,6 +91,11 @@ while (true)
         break;
     }
 
+    else
+    {
+        Console.WriteLine("Invalid option. Please try again.");
+    }
+
     Console.WriteLine("\nPress any key to continue...");
     Console.ReadLine();
 }
