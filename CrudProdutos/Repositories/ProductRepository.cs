@@ -1,6 +1,7 @@
 ﻿using CrudProducts;
+using CrudProducts.Data;
 using CrudProducts.Models;
-using Microsoft.Data.Sqlite;
+using Microsoft.Data.Sqlite;  
 
 namespace CrudProducts.Repositories 
 { 
@@ -14,7 +15,7 @@ namespace CrudProducts.Repositories
             conn.Open();
 
             var cmd = conn.CreateCommand();
-            cmd.CommandText = "INSRT INTO Products (Name, Price) VALUES (@name, @price)";
+            cmd.CommandText = "INSERT INTO Products (Name, Price) VALUES (@name, @price)";
             cmd.Parameters.AddWithValue("@name", product.Name);
             cmd.Parameters.AddWithValue("@price", product.Price);
             cmd.ExecuteNonQuery(); // executa comandos que não retornam dados (INSERT, UPDATE, DELETE)
@@ -31,6 +32,7 @@ namespace CrudProducts.Repositories
             cmd.CommandText = "SELECT Id, Name, Price FROM Products";
 
             using var reader = cmd.ExecuteReader(); // executa comandos que retorna linhas (SELECT) 
+            
             while(reader.Read()) // avanca linha por linha no resultado do banco, como um cursor
             {
                 list.Add(new Product
@@ -56,15 +58,15 @@ namespace CrudProducts.Repositories
             cmd.Parameters.AddWithValue("@id", Product.Id);
             cmd.ExecuteNonQuery();
         }
-        public void Remove(int id)
+        public bool Remove(int id)
         {
             using var conn = _db.GetConnection();
             conn.Open();
-
             var cmd = conn.CreateCommand();
             cmd.CommandText = "DELETE FROM Products WHERE Id = @id";
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.ExecuteNonQuery();
+            int rowsAffected = cmd.ExecuteNonQuery();
+            return rowsAffected > 0; // retorna true se deletou, false se não encontrou
         }
     }
 }

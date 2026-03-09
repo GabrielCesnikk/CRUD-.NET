@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.Sqlite; // Importa o "Plugin" do SQLite que eu instalei via NuGet.
 
-namespace CrudProducts
+namespace CrudProducts.Data  // Lembrar do .Data 
 {
     public class Database
     {
